@@ -1,4 +1,4 @@
-package controller.camping;
+package controller;
 
 import java.io.IOException;
 
@@ -8,11 +8,17 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/search")
-public class SearchCampingController extends HttpServlet{
+@WebServlet("/mypage")
+public class MyPageController extends HttpServlet {
+
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		try {
+			request.getRequestDispatcher("/WEB-INF/view/mypage/mypage.jsp").forward(request, response);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
-		request.getRequestDispatcher("/WEB-INF/view/camping/search.jsp").forward(request, response);
 	}
 }
+
