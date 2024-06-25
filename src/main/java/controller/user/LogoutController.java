@@ -12,6 +12,13 @@ import jakarta.servlet.http.HttpServletResponse;
 public class LogoutController extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		if (request.getSession().getAttribute("authUser") == null) {
+			response.sendRedirect(request.getContextPath() + "/index");
+			return;
+		}
+		
+		request.getSession().invalidate();
+		response.sendRedirect(request.getContextPath() + "/index");
 		
 	}
 }

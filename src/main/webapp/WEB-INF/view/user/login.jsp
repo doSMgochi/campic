@@ -15,12 +15,12 @@
 			</div>
 		</div>
 		<div style="width: 400px; margin: 60px auto; border:2px solid #ddd; padding:30px;">
-			<form action="${pageContext.servletContext.contextPath }/user/login-handle">
+			<form action="${pageContext.servletContext.contextPath }/login-handle" method="post">
 				<p>
 					<input type="text" name="id" placeholder="아이디를 입력해주세요" />
 				</p>
 				<p>
-					<input type="password" name="pwd" placeholder="비밀번호를 입력해주세요"/>
+					<input type="password" name="password" placeholder="비밀번호를 입력해주세요"/>
 				</p>
 				<p>
 					<button type="submit">로그인</button>
