@@ -39,7 +39,7 @@ public class BoardDao {
 		ods.setPassword("oracle");
 		try (Connection conn = ods.getConnection()) {
 
-			PreparedStatement stmt = conn.prepareStatement("SELECT COUNT(*) FROM BOARDS");
+			PreparedStatement stmt = conn.prepareStatement("SELECT COUNT(*) FROM BOARD");
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {
 				return rs.getInt(1);
@@ -61,7 +61,7 @@ public class BoardDao {
 
 		try (Connection conn = ods.getConnection()) {
 
-			PreparedStatement stmt = conn.prepareStatement("insert into Boards values(?, ?, ?, ?, ?, ?, ?, ?, ?, 0)");
+			PreparedStatement stmt = conn.prepareStatement("insert into Board values(?, ?, ?, ?, ?, ?, ?, ?, ?, 0)");
 
 			stmt.setInt(1, newBoard.getNo());
 			stmt.setString(2, newBoard.getWriterId());
@@ -228,7 +228,7 @@ public class BoardDao {
 		try (Connection conn = ods.getConnection()) {
 
 			PreparedStatement stmt = conn.prepareStatement(
-					"SELECT * FROM BOARDS WHERE TITLE LIKE ? OR BODY LIKE ? OR CATEGORY LIKE ? ORDER BY NO DESC");
+					"SELECT * FROM BOARD WHERE TITLE LIKE ? OR BODY LIKE ? OR CATEGORY LIKE ? ORDER BY NO DESC");
 			stmt.setString(1, "%" + search + "%");
 			stmt.setString(2, "%" + search + "%");
 			stmt.setString(3, "%" + search + "%");

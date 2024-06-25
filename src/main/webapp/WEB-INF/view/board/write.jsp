@@ -14,7 +14,7 @@
 		<p style="text-align: center">
 			글쓰기
 		</p>
-		<form action="${pageContext.servletContext.contextPath }write-handle">
+		<form action="${pageContext.servletContext.contextPath }/board/write-handle">
 			<table style="border-collapse: collapse; width: 100%">
 				<tr>
 					<td
