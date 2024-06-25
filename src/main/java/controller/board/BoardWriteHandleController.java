@@ -27,7 +27,7 @@ public class BoardWriteHandleController extends HttpServlet {
 		User authUser = (User) request.getSession().getAttribute("authUser");
 		String category = request.getParameter("category");
 		String title = request.getParameter("title");
-		String body = request.getParameter("body");
+		String body = request.getParameter("body").replace("\n", "<br/>");
 		
 		Board one = new Board(0, authUser.getId(), body, null, null, new Date(System.currentTimeMillis()), 0, category, title, 0 );
 		BoardDao boardDao = new BoardDao();
