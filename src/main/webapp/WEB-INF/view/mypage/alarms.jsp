@@ -7,8 +7,9 @@
 <title>다함께 캠핑가자, 캠픽</title>
 </head>
 <body>
-	NAVVAR1
-	<div style="width: 500px; margin-left: 900px; margin-top: 20px">
+	<%@ include file="../outer-nav.jsp"%>
+	<div
+		style="width: 500px; height: 860px; margin-left: 900px; margin-top: 20px; background: rgba(255, 255, 255, 0.9); border-radius: 25px; padding: 10px;">
 		<!-- 임시 CSS 처리 -->
 		<div
 			style="display: flex; align-items: center; justify-content: space-between;">
@@ -24,7 +25,7 @@
 			<div>없으면 아래 내용 출력</div>
 			알림이 없습니다.
 		</div>
-		<div style="position: absolute; bottom: 1%;">
+		<div style="position: absolute; bottom: 5%;">
 			<%@ include file="../inner-nav.jsp"%>
 		</div>
 	</div>
