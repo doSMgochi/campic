@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div
-		style="display: flex; align-items: center; justify-content: space-between; width: 185%">
+		style="display: flex; align-items: center; justify-content: space-between; width: 175%">
 		<a href="${pageContext.servletContext.contextPath }"><button>홈</button></a>
 		<a href="${pageContext.servletContext.contextPath }/search"><button>캠핑장 검색</button></a>
 		<a href="${pageContext.servletContext.contextPath }/product"><button>스토어</button></a>
