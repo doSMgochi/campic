@@ -34,7 +34,7 @@
 					<td
 						style="border: 1px solid #ccc; padding: 12px; text-align: center; background-color: #eee"><span
 						style="color: red">*</span>작성자</td>
-					<td style="border: 1px solid #ccc; padding: 12px;">${authUser.nickname}</td>
+					<td style="border: 1px solid #ccc; padding: 12px;">${authUser.id}</td>
 				</tr>
 				
 				<tr>
