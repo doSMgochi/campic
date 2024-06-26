@@ -49,6 +49,7 @@
 			<div>자동 저장 기능이 꺼져있어요</div>
 			<div>else 일 때, if 문 돌려서 최근 본 캠핑장이 없으면 아래 출력</div>
 			<div>최근 본 캠핑장이 없어요</div>
+			<div>있으면, 이름과 지역만 찍어주기</div>
 		</div>
 		<div>광고</div>
 		<div style="position: absolute; bottom: 1%;">
