@@ -8,12 +8,12 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/search-result")
+@WebServlet("/search")
 public class SearchController extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
-		request.getRequestDispatcher("/WEB-INF/view/search-result.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/view/search.jsp").forward(request, response);
 	}
 }

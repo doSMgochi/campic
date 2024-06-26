@@ -7,8 +7,9 @@
 <title>다함께 캠핑가자, 캠픽</title>
 </head>
 <body>
-	NAVVAR1
-	<div style="width: 500px; margin-left: 900px; margin-top: 20px">
+	<%@ include file="./outer-nav.jsp"%>
+	<div
+		style="width: 500px; height: 860px; margin-left: 900px; margin-top: 20px; background: rgba(255, 255, 255, 0.9); border-radius: 25px; padding: 10px;">
 		<!-- 임시 CSS 처리 -->
 		<div
 			style="display: flex; align-items: center; justify-content: space-between;">
@@ -23,7 +24,8 @@
 
 		</div>
 		<div>
-			<form>
+			<form
+				action="${pageContext.servletContext.contextPath }/search/result">
 				<input type="text" name="" placeholder="캠핑장명을 검색해 보세요"
 					style="width: 100%" />
 				<div
@@ -52,8 +54,8 @@
 			<div>있으면, 이름과 지역만 찍어주기</div>
 		</div>
 		<div>광고</div>
-		<div style="position: absolute; bottom: 1%;">
-			<%@ include file="../inner-nav.jsp"%>
+		<div style="position: absolute; bottom: 5%;">
+			<%@ include file="./inner-nav.jsp"%>
 		</div>
 	</div>
 </body>

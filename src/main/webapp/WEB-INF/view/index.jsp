@@ -8,8 +8,8 @@
 </head>
 <body>
 	<%@ include file="./outer-nav.jsp"%>
-	NAVVAR1
-	<div style="width: 500px; height: 820px ; margin-left: 900px; margin-top: 20px ; background: rgba( 255, 255, 255, 0.9 ) ; border-radius: 25px ; padding: 10px ;">
+	<div
+		style="width: 500px; height: 860px; margin-left: 900px; margin-top: 20px; background: rgba(255, 255, 255, 0.9); border-radius: 25px; padding: 10px;">
 		<!-- 임시 CSS 처리 -->
 		<div
 			style="display: flex; align-items: center; justify-content: space-between;">
