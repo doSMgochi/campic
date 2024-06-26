@@ -220,6 +220,37 @@ public class BoardDao {
 		}
 	}
 
+	
+	
+	public List<Board> findByCategory(String category, int start, int end) throws Exception {
+		OracleDataSource ods = new OracleDataSource();
+		ods.setURL("jdbc:oracle:thin:@//13.124.229.167:1521/xe");
+		ods.setUser("campic");
+		ods.setPassword("oracle");
+		try (Connection conn = ods.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement(
+					"select * from (select g.*, rownum rn from (select * from Board where category = ? order by no desc) g) where rn between ? and ?");
+			stmt.setString(1, category);
+			stmt.setInt(2, start);
+			stmt.setInt(3, end);
+
+			ResultSet rs = stmt.executeQuery();
+			List<Board> boards = new ArrayList<Board>();
+			while (rs.next()) {
+				Board one = new Board(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),
+						rs.getDate(6), rs.getInt(7), rs.getString(8), rs.getString(9), rs.getInt(10));
+				boards.add(one);
+			}
+			return boards;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	
+	
 	public List<Board> searchByBoard(String search) throws SQLException {
 		OracleDataSource ods = new OracleDataSource();
 		ods.setURL("jdbc:oracle:thin:@//13.124.229.167:1521/xe");
@@ -256,6 +287,5 @@ public class BoardDao {
 			e.printStackTrace();
 			return null;
 		}
-
 	}
 }
