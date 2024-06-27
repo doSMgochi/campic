@@ -32,6 +32,9 @@ public class CampsiteListController extends HttpServlet {
 			int end = size * p;
 			int count = 0;
 
+			int price = (45 + (int) (Math.random() * 120)) *1000;
+			request.setAttribute("price", price);
+
 			//
 			switch (id) {
 			case 1 -> {

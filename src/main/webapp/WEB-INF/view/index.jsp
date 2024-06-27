@@ -5,99 +5,117 @@
 <head>
 <meta charset="UTF-8">
 <title>다함께 캠핑가자, 캠픽</title>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 </head>
 <body>
 	<%@ include file="./outer-nav.jsp"%>
 	<div class="fixed-box">
 		<!-- 임시 CSS 처리 -->
-		<div class="status-bar">
-			<div class="status-bar__column">
+		<div
+			style="display: flex; align-items: center; justify-content: space-between;">
+			<div>
 				<img src="./logo.png" style="width: 130px; height: 70px" />
 			</div>
-			<div class="status-bar__column status-bar__column:nth-child(2)">
+			<div>
 				<a
-					href="${pageContext.servletContext.contextPath }/mypage/reservation"><button>예약조회</button></a>
-			</div>
-			<div class="status-bar__column status-bar__column:last-child">
-				<a href="${pageContext.servletContext.contextPath }/mypage/alarms"><button>알림
-						버튼(아이콘)</button></a>
+					href="${pageContext.servletContext.contextPath }/mypage/reservation"><button
+						class="button-a">예약조회</button></a> <a
+					href="${pageContext.servletContext.contextPath }/mypage/alarms"><button
+						class="button-a">
+						<i class="fa-regular fa-bell"></i>
+					</button></a>
 			</div>
 		</div>
-		<div>광고</div>
-		<div>
-			카테고리
+		<div style="margin-top: 10px">
+			<img src="./ad.jpg"
+				style="width: 480px; height: 220px; border-radius: 15px" />
+		</div>
+		<div style="margin-top: 20px">
 			<div
 				style="display: flex; align-items: center; justify-content: space-between;">
-				<div>
+				<div style="text-align: center">
 					<a href="${pageContext.servletContext.contextPath }/exhibition/1"><button
-							style="width: 70px; height: 70px">물놀이가자</button></a>
+							class="button-b" style="width: 70px; height: 70px">
+							<i class="fa-solid fa-person-swimming" style="font-size: 2em"></i>
+						</button></a> <br /> <span style="font-size: 0.9em;">물놀이가자</span>
 				</div>
-				<div>
+				<div style="text-align: center">
 					<a href="${pageContext.servletContext.contextPath }/exhibition/2"><button
-							style="width: 70px; height: 70px">만만한캠핑</button></a>
+							class="button-b" style="width: 70px; height: 70px">
+							<i class="fa-solid fa-mountain-sun" style="font-size: 2em"></i>
+						</button></a> <br /> <span style="font-size: 0.9em;">만만한캠핑</span>
 				</div>
-				<div>
+				<div style="text-align: center">
 					<a href="${pageContext.servletContext.contextPath }/exhibition/3"><button
-							style="width: 70px; height: 70px">키즈캠핑</button></a>
+							class="button-b" style="width: 70px; height: 70px">
+							<i class="fa-solid fa-children" style="font-size: 2em"></i>
+						</button></a> <br /> <span style="font-size: 0.9em;">키즈캠핑</span>
 				</div>
-				<div>
+				<div style="text-align: center">
 					<a
 						href="${pageContext.servletContext.contextPath }/search/result?additionalFacilities=pet"><button
-							style="width: 70px; height: 70px">반려견캠핑</button></a>
+							class="button-b" style="width: 70px; height: 70px">
+							<i class="fa-solid fa-dog" style="font-size: 2em"></i>
+						</button></a> <br /> <span style="font-size: 0.9em;">반려견캠핑</span>
 				</div>
-				<div>
-					<a href=""><button style="width: 70px; height: 70px">빠른예약</button></a>
+				<div style="text-align: center">
+					<a href=""><button class="button-b"
+							style="width: 70px; height: 70px">
+							<i class="fa-solid fa-clock" style="font-size: 2em"></i>
+						</button></a> <br /> <span style="font-size: 0.9em;">빠른예약</span>
 				</div>
 			</div>
 			<div
-				style="display: flex; align-items: center; justify-content: space-between;">
-				<div>
-					<a href=""><button style="width: 70px; height: 70px">오토캠핑</button></a>
+				style="display: flex; align-items: center; justify-content: space-between; margin-top: 10px">
+				<div style="text-align: center">
+					<a href=""><button class="button-c"
+							style="width: 70px; height: 70px">
+							<i class="fa-solid fa-fire" style="font-size: 2em"></i>
+						</button></a> <br /> <span style="font-size: 0.9em;">오토캠핑</span>
 				</div>
-				<div>
-					<a href=""><button style="width: 70px; height: 70px">글램핑</button></a>
+				<div style="text-align: center">
+					<a href=""><button class="button-c"
+							style="width: 70px; height: 70px">
+							<i class="fa-solid fa-campground" style="font-size: 2em"></i>
+						</button></a> <br /> <span style="font-size: 0.9em;">글램핑</span>
 				</div>
-				<div>
-					<a href=""><button style="width: 70px; height: 70px">카라반</button></a>
+				<div style="text-align: center">
+					<a href=""><button class="button-c"
+							style="width: 70px; height: 70px">
+							<i class="fa-solid fa-caravan" style="font-size: 2em"></i>
+						</button></a> <br /> <span style="font-size: 0.9em;">카라반</span>
 				</div>
-				<div>
-					<a href="${pageContext.servletContext.contextPath }/exhibition/4"><button
-							style="width: 70px; height: 70px">펜션</button></a>
+				<div style="text-align: center">
+					<a href="${pageContext.servletContext.contextPath }/exhibition/4"><button class="button-c"
+							style="width: 70px; height: 70px">
+							<i class="fa-solid fa-house-chimney" style="font-size: 2em"></i>
+						</button></a> <br /> <span style="font-size: 0.9em;">펜션</span>
 				</div>
-				<div>
-					<a href=""><button style="width: 70px; height: 70px">이벤트</button></a>
+				<div style="text-align: center">
+					<a href=""><button class="button-c"
+							style="width: 70px; height: 70px">
+							<i class="fa-solid fa-gift" style="font-size: 2em"></i>
+						</button></a> <br /> <span style="font-size: 0.9em;">이벤트</span>
 				</div>
 			</div>
 		</div>
-		<div>예약오픈 일정 한눈에 보기</div>
+		<div
+			style="text-align: center; margin-top: 20px; display: flex; align-items: center; justify-content: center; background: #221F18; border-radius: 10px; padding: 15px ; color: white ; margin-bottom: 10px">
+			<div>
+				<i class="fa-solid fa-tents" style="font-size: 3em"></i>
+			</div>
+			<div style="margin-left: 5px">
+				예약오픈 일정 한눈에 보기<br /> <small>오픈 일정이 궁금하신가요?</small>
+			</div>
+		</div>
 		<div>
-			───────이하 게시판 목록인데 목록 자체가 랜덤으로 뜨는 듯?
 			<div
-				style="display: flex; align-items: center; justify-content: space-between;">
-				<div>실시간 캠핑 로그</div>
-				<div>전체보기</div>
+				style="display: flex; align-items: center; justify-content: space-between; margin: 10px">
+				<div style="font-size: 1.1em; font-weight: bold;">실시간 캠핑 로그</div>
+				<div style="color: darkslateblue ; font-weight: bold">전체보기</div>
 			</div>
-			<div
-				style="display: flex; align-items: center; justify-content: space-between;">
-				<div>캠핑장 기획전</div>
-				<div>전체보기</div>
-			</div>
-			<div
-				style="display: flex; align-items: center; justify-content: space-between;">
-				<div>MD픽 캠핑장 (화면 넘어가는 부분 js)</div>
-				<div>전체보기</div>
-			</div>
-			<div
-				style="display: flex; align-items: center; justify-content: space-between;">
-				<div>캠핑 Magazine</div>
-				<div>전체보기</div>
-			</div>
-			<div
-				style="display: flex; align-items: center; justify-content: space-between;">
-				<div>캠핑 기획전</div>
-				<div>전체보기</div>
-			</div>
-			<footer> FOOTER </footer>
 			<div class="fixed-footer">
 				<%@ include file="./inner-nav.jsp"%>
 			</div>

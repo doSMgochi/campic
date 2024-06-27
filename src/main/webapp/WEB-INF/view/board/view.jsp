@@ -11,6 +11,7 @@
 <body>
 
 	<div class="fixed-box">
+
 		<div class="content-box">
 			<div class="board">
 				<div class="board-cates">
@@ -72,7 +73,20 @@
 						<%@ include file="../inner-nav.jsp"%>
 					</div>
 			</div>
+
 		</div>
+		<a href="${pageContext.servletContext.contextPath }/board/list"><button>목록</button></a>
+		<c:if test="${r == true}">
+			<a
+				href="${pageContext.request.contextPath}/board/delete?no=${found.no}">
+				<button>삭제</button>
+			</a>
+			<a
+				href="${pageContext.request.contextPath}/board/update?no=${found.no}">
+				<button>수정</button>
+			</a>
+		</c:if>
 	</div>
+
 </body>
 </html>

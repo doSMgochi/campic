@@ -9,7 +9,6 @@
 <body>
 	<%@ include file="../outer-nav.jsp"%>
 	<div class="fixed-box">
-		<div class="content-box">
 			<!-- 임시 CSS 처리 -->
 			<div
 				style="display: flex; align-items: center; justify-content: space-between;">
@@ -52,6 +51,5 @@
 				<%@ include file="../inner-nav.jsp"%>
 			</div>
 		</div>
-	</div>
 </body>
 </html>
