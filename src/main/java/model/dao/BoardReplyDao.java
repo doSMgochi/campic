@@ -18,7 +18,7 @@ public class BoardReplyDao {
 		ods.setUser("campic");
 		ods.setPassword("oracle");
 		try (Connection conn = ods.getConnection()) {
-			PreparedStatement stmt = conn.prepareStatement("SELECT BOARDS_REPLY_SEQ.NEXTVAL FROM DUAL");
+			PreparedStatement stmt = conn.prepareStatement("SELECT BOARD_REPLY_SEQ.NEXTVAL FROM DUAL");
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {
 				int key = rs.getInt("nextval");
@@ -66,7 +66,7 @@ public class BoardReplyDao {
 		try (Connection conn = ods.getConnection()) {
 
 			PreparedStatement stmt = conn
-					.prepareStatement("SELECT * FROM BOARD_REPLY where BOARD_ID=? ORDER BY ID DESC");
+					.prepareStatement("SELECT * FROM BOARD_REPLY where BOARD_ID=? ORDER BY BOARD_ID DESC");
 			stmt.setInt(1, boardId);
 
 			ResultSet rs = stmt.executeQuery();
