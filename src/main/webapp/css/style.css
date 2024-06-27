@@ -76,7 +76,8 @@ body {
 	height: 90vh;
 }
 
-.board-cates  a {
+
+.board-cates  a{
 	text-decoration: none;
 	color: rgb(105, 111, 115);
 	padding-bottom: 4px;

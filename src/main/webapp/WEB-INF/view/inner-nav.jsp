@@ -8,6 +8,7 @@
 	rel="stylesheet">
 </head>
 <body>
+
 	<div
 		style="display: flex; align-items: center; justify-content: space-between; width: 120%">
 		<a href="${pageContext.servletContext.contextPath }"><button
@@ -33,5 +34,3 @@
 				<span class="material-symbols-rounded"> person </span><br /><small>마이</small>
 			</button></a>
 	</div>
-</body>
-</html>

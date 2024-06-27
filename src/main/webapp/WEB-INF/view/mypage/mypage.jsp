@@ -74,8 +74,23 @@
 			<div style="width: 50%">
 				<a><button>회원가입</button></a>
 			</div>
-			<div style="width: 50%">
-				<a><button>로그인</button></a>
+
+			<div>내 장비</div>
+			<div>박스들~</div>
+			<br />
+			<div>캠핑</div>
+			<div>내 사용 리뷰</div>
+			<div>나의 활동</div>
+			<div>──로그인 안했을 때 뜨는 부분</div>
+			<div
+				style="display: flex; align-items: center; justify-content: space-between;">
+				<div style="width: 50%">
+					<a href="${pageContext.servletContext.contextPath }/signup"><button>회원가입</button></a>
+				</div>
+				<div style="width: 50%">
+					<a href="${pageContext.servletContext.contextPath }/login"><button>로그인</button></a>
+				</div>
+
 			</div>
 		</div>
 		<div>──통합──</div>
