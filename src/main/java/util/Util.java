@@ -27,11 +27,19 @@ public class Util {
 
     public static String getDaysAgo(String dateString) {
         try {
-            Date date = sdf.parse(dateString);
+        	Date date = sdf.parse(dateString);
             long diffInMillies = Math.abs(new Date().getTime() - date.getTime());
-            long diff = TimeUnit.DAYS.convert(diffInMillies, TimeUnit.MILLISECONDS);
+            long diffInMinutes = TimeUnit.MINUTES.convert(diffInMillies, TimeUnit.MILLISECONDS);
+            long diffInHours = TimeUnit.HOURS.convert(diffInMillies, TimeUnit.MILLISECONDS);
+            long diffInDays = TimeUnit.DAYS.convert(diffInMillies, TimeUnit.MILLISECONDS);
 
-            return diff + "일 전";
+            if (diffInMinutes < 60) {
+                return diffInMinutes + "분 전";
+            } else if (diffInHours < 24) {
+                return diffInHours + "시간 전";
+            } else {
+                return diffInDays + "일 전";
+            }
         } catch (ParseException e) {
             e.printStackTrace();
             return "날짜 형식 오류";
