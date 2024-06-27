@@ -57,10 +57,10 @@
 			<div
 				style="display: flex; align-items: center; justify-content: space-between;">
 				<div style="width: 50%">
-					<a><button>회원가입</button></a>
+					<a href="${pageContext.servletContext.contextPath }/signup"><button>회원가입</button></a>
 				</div>
 				<div style="width: 50%">
-					<a><button>로그인</button></a>
+					<a href="${pageContext.servletContext.contextPath }/login"><button>로그인</button></a>
 				</div>
 			</div>
 			<div>──통합──</div>
