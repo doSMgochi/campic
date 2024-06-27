@@ -12,6 +12,7 @@
 	href="${pageContext.servletContext.contextPath }/css/style.css?<%=System.currentTimeMillis() %>" />
 </head>
 <body>
+
 	<div class="board">
 		<div class="board-cates">
 			<a href="${pageContext.servletContext.contextPath }/board?home"
@@ -58,6 +59,7 @@
 			</c:when>
 
 			<c:when test="${category == '캠핑한컷'}">
+
 				<c:forEach items="${boards }" var="one">
 					<span style="color: #777; text-align: left;"></span>
 					<span>${one.category}</span>
@@ -78,6 +80,7 @@
 						<span style="color: #777 text-align: left;">♡</span> <span>${one.favorite }</span>
 					</div>
 				</c:forEach>
+
 					<div>
 					<a href="${pageContext.servletContext.contextPath }/board/write"><button>글쓰기</button></a>
 					</div>
@@ -170,17 +173,26 @@
 		<!-- 페이지 링크 -->
 		<div style="text-align: center; margin-top: 30px;">
 
-			<c:forEach begin="1" end="${totalPages }" var="i">
-				<c:choose>
-					<c:when test="${i == currentPage }">
-						<b style="color: red">${i }</b>
-					</c:when>
-					<c:otherwise>
-						<a href="${pageContext.servletContext.contextPath }/boards?p=${i}">${i }</a>
-					</c:otherwise>
-				</c:choose>
-			</c:forEach>
+
+			<!-- 페이지 링크 -->
+			<div style="text-align: center; margin-top: 30px;">
+
+				<c:forEach begin="1" end="${totalPages }" var="i">
+					<c:choose>
+						<c:when test="${i == currentPage }">
+							<b style="color: red">${i }</b>
+						</c:when>
+						<c:otherwise>
+							<a
+								href="${pageContext.servletContext.contextPath }/boards?p=${i}">${i }</a>
+						</c:otherwise>
+					</c:choose>
+				</c:forEach>
+			</div>
 		</div>
+	</div>
+	<div class="fixed-footer">
+		<%@ include file="../inner-nav.jsp"%>
 	</div>
 </body>
 </html>

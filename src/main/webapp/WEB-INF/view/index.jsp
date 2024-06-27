@@ -8,18 +8,17 @@
 </head>
 <body>
 	<%@ include file="./outer-nav.jsp"%>
-	<div
-		style="width: 500px; height: 860px; margin-left: 900px; margin-top: 20px; background: rgba(255, 255, 255, 0.9); border-radius: 25px; padding: 10px;">
+	<div class="fixed-box">
 		<!-- 임시 CSS 처리 -->
-		<div
-			style="display: flex; align-items: center; justify-content: space-between;">
-
-			<div>로고(CAMPIC)(이미지)</div>
-			<div>
+		<div class="status-bar">
+			<div class="status-bar__column">
+				<img src="./logo.png" style="width: 130px; height: 70px" />
+			</div>
+			<div class="status-bar__column status-bar__column:nth-child(2)">
 				<a
 					href="${pageContext.servletContext.contextPath }/mypage/reservation"><button>예약조회</button></a>
 			</div>
-			<div>
+			<div class="status-bar__column status-bar__column:last-child">
 				<a href="${pageContext.servletContext.contextPath }/mypage/alarms"><button>알림
 						버튼(아이콘)</button></a>
 			</div>
@@ -42,7 +41,9 @@
 							style="width: 70px; height: 70px">키즈캠핑</button></a>
 				</div>
 				<div>
-					<a href=""><button style="width: 70px; height: 70px">반려견캠핑</button></a>
+					<a
+						href="${pageContext.servletContext.contextPath }/search/result?additionalFacilities=pet"><button
+							style="width: 70px; height: 70px">반려견캠핑</button></a>
 				</div>
 				<div>
 					<a href=""><button style="width: 70px; height: 70px">빠른예약</button></a>
@@ -97,7 +98,7 @@
 				<div>전체보기</div>
 			</div>
 			<footer> FOOTER </footer>
-			<div style="position: absolute; bottom: 5%;">
+			<div class="fixed-footer">
 				<%@ include file="./inner-nav.jsp"%>
 			</div>
 		</div>

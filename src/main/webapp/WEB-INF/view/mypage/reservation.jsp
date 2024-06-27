@@ -8,34 +8,36 @@
 </head>
 <body>
 	<%@ include file="../outer-nav.jsp"%>
-	<div
-		style="width: 500px; height: 860px; margin-left: 900px; margin-top: 20px; background: rgba(255, 255, 255, 0.9); border-radius: 25px; padding: 10px;">
-		<!-- 임시 CSS 처리 -->
-		<div
-			style="display: flex; align-items: center; justify-content: space-between;">
+	<div class="fixed-box">
+		<div class="content-box">
+			<!-- 임시 CSS 처리 -->
+			<div
+				style="display: flex; align-items: center; justify-content: space-between;">
 
-			<div>
-				<input type="button" value="&lt;(아이콘 변경)" onclick="history.back();" />
+				<div>
+					<input type="button" value="&lt;(아이콘 변경)" onclick="history.back();" />
+				</div>
+				<div>예약내역</div>
+				<div>상담(아이콘 변경)(*JS)</div>
 			</div>
-			<div>예약내역</div>
-			<div>상담(아이콘 변경)(*JS)</div>
+			<div style="display: flex; align-items: center">
+				<div>전체 |</div>
+				<div>결제대기 |</div>
+				<div>예약완료 |</div>
+				<div>이용완료 |</div>
+				<div>취소/환불</div>
+			</div>
+			<div>if문 처리하고 예약 내역 출력</div>
+			<div>없으면 아래 내용 출력</div>
+			<div style="text-align: center">
+				예약 된 캠핑장이 없어요.<br />비어있는 캠핑장을 확인해보세요<br /> <a href=""><button>빠른
+						빈자리 찾기</button></a>
+			</div>
+			<div class="fixed-footer">
+				<%@ include file="../inner-nav.jsp"%>
+			</div>
 		</div>
-		<div style="display: flex; align-items: center">
-			<div>전체 |</div>
-			<div>결제대기 |</div>
-			<div>예약완료 |</div>
-			<div>이용완료 |</div>
-			<div>취소/환불</div>
-		</div>
-		<div>if문 처리하고 예약 내역 출력</div>
-		<div>없으면 아래 내용 출력</div>
-		<div style="text-align: center">
-			예약 된 캠핑장이 없어요.<br />비어있는 캠핑장을 확인해보세요<br /> <a href=""><button>빠른
-					빈자리 찾기</button></a>
-		</div>
-		<div style="position: absolute; bottom: 5%;">
-			<%@ include file="../inner-nav.jsp"%>
-		</div>
+
 	</div>
 </body>
 </html>

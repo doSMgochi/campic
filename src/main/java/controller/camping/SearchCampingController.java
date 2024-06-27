@@ -20,15 +20,29 @@ public class SearchCampingController extends HttpServlet {
 		try {
 
 			String camp = request.getParameter("camp");
+			String additionalFacilities = request.getParameter("additionalFacilities");
 			CampsiteDao campsiteDao = new CampsiteDao();
-			List<Campsite> campsites = campsiteDao.searchByCampsite(camp);
-			if (campsites == null) {
-				campsites = new ArrayList<Campsite>();
-			}
-			int listSize = campsites.size();
-			request.setAttribute("campsites", campsites);
-			request.setAttribute("listSize", listSize);
 
+			if (camp != null) {
+				List<Campsite> campsites = campsiteDao.searchByCampsite(camp);
+				if (campsites == null) {
+					campsites = new ArrayList<Campsite>();
+				}
+				int listSize = campsites.size();
+				
+				request.setAttribute("campsites", campsites);
+				request.setAttribute("listSize", listSize);
+			}
+
+			if (additionalFacilities.equals("pet")) {
+				List<Campsite> campsites = campsiteDao.findByAnimalPossible();
+				if (campsites == null) {
+					campsites = new ArrayList<Campsite>();
+				}
+				int listSize = campsites.size();
+				request.setAttribute("campsites", campsites);
+				request.setAttribute("listSize", listSize);
+			}
 			request.getRequestDispatcher("/WEB-INF/view/camping/search-result.jsp").forward(request, response);
 
 		} catch (Exception e) {
