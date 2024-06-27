@@ -10,7 +10,7 @@ public class Campsite {
 	String intro;
 	String feature;
 	String induty;
-	String environmnet;
+	String environment;
 	String zipCode;
 	String address;
 	String direction;
@@ -45,7 +45,7 @@ public class Campsite {
 	}
 
 	public Campsite(int id, String name, String businessNumber, String lineIntro, String intro, String feature,
-			String induty, String environmnet, String zipCode, String address, String direction, String tel,
+			String induty, String environment, String zipCode, String address, String direction, String tel,
 			String homepage, String resveUrl, String resveCl, int gnrlSite, int autoSite, int glampSite, int caravSite,
 			int indvdlCaravSite, String tooltip, String glampInner, String caravInner, String operPd, String operDe,
 			int toilet, int swrm, int wtrpl, String sbrs, String sbrsEtc, String posbl, String posblEtc,
@@ -58,7 +58,7 @@ public class Campsite {
 		this.intro = intro;
 		this.feature = feature;
 		this.induty = induty;
-		this.environmnet = environmnet;
+		this.environment = environment;
 		this.zipCode = zipCode;
 		this.address = address;
 		this.direction = direction;
@@ -145,12 +145,12 @@ public class Campsite {
 		this.induty = induty;
 	}
 
-	public String getEnvironmnet() {
-		return environmnet;
+	public String getEnvironment() {
+		return environment;
 	}
 
-	public void setEnvironmnet(String environmnet) {
-		this.environmnet = environmnet;
+	public void setEnvironment(String environment) {
+		this.environment = environment;
 	}
 
 	public String getZipCode() {
