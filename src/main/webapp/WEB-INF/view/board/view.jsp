@@ -40,8 +40,33 @@
 			</c:if>
 		</div>
 	</div>
-	<div class="fixed-footer">
-		<%@ include file="../inner-nav.jsp"%>
-	</div>
+	<a href="${pageContext.servletContext.contextPath }/board"><button>목록</button></a>
+	<c:if test="${r == true}">
+    <a href="${pageContext.request.contextPath}/board/delete?no=${found.no}">
+        <button>삭제</button>
+    </a>
+    <a href="${pageContext.request.contextPath}/board/update?no=${found.no}">
+        <button>수정</button>
+    </a>
+	</c:if>
+	<!-- 답글 리스트 표시 -->
+    <div>
+        <h3>답글</h3>
+        <c:forEach var="reply" items="${replies}">
+            <div>
+                <p><strong>${reply.writerId}</strong> (${reply.writedAt}): ${reply.body}</p>
+            </div>
+        </c:forEach>
+    </div>
+
+    <!-- 답글 추가 폼 -->
+    <div>
+        <h3>답글 달기</h3>
+        <form action="${pageContext.request.contextPath}/board/reply" method="post">
+            <input type="hidden" name="boardId" value="${found.no}">
+            <textarea name="body" rows="4" cols="50"></textarea><br>
+            <button type="submit">답글 추가</button>
+        </form>
+    </div>
 </body>
 </html>
