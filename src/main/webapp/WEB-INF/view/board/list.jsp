@@ -17,7 +17,7 @@
 		<div class="board-cates">
 			<a href="${pageContext.servletContext.contextPath }/board?home"
 				class="${category =='홈'? 'active' : '' }"> 홈 </a> <a
-			 	href="${pageContext.servletContext.contextPath }/board?campingLog"
+				href="${pageContext.servletContext.contextPath }/board?campingLog"
 				class="${category =='캠핑로그'? 'active' : '' }"> 캠핑로그 </a> <a
 				href="${pageContext.servletContext.contextPath }/board?campingPhoto"
 				class="${category =='캠핑한컷'? 'active' : '' }"> 캠핑한컷 </a> <a
@@ -28,30 +28,28 @@
 				href="${pageContext.servletContext.contextPath }/board?articles"
 				class="${category =='아티클'? 'active' : '' }"> 아티클 </a>
 		</div>
-
-
 		<c:choose>
 			<c:when test="${category == '홈'}">
 				<c:forEach var="cat" items="${categories}">
-                    <h3>${cat}</h3>
-                    <c:forEach var="one" items="${topPostsByCategory[cat]}">
-                        <div class="post">
-                            <span>${one.category}</span>
-                            <span>${one.title}</span>
-                            <h3>${one.writerId}</h3>
-                            <div>
-                                <span>${Util.getDaysAgo(one.writedAt)}</span>
-                            </div>
-                            <p>
-                                <a href="${pageContext.servletContext.contextPath }/board/view?no=${one.no}">
-                                    ${Util.getFirstThreeLines(one.body)}</a>
-                            </p>
-                            <div>
-                                <span>♡</span> <span>${one.favorite}</span>
-                            </div>
-                        </div>
-                    </c:forEach>
-                </c:forEach>
+					<h3>${cat}</h3>
+					<c:forEach var="one" items="${topPostsByCategory[cat]}">
+						<div class="post">
+							<span>${one.category}</span> <span>${one.title}</span>
+							<h3>${one.writerId}</h3>
+							<div>
+								<span>${Util.getDaysAgo(one.writedAt)}</span>
+							</div>
+							<p>
+								<a
+									href="${pageContext.servletContext.contextPath }/board/view?no=${one.no}">
+									${Util.getFirstThreeLines(one.body)}</a>
+							</p>
+							<div>
+								<span>♡</span> <span>${one.favorite}</span>
+							</div>
+						</div>
+					</c:forEach>
+				</c:forEach>
 			</c:when>
 
 			<c:when test="${category == '캠핑로그'}">
@@ -81,9 +79,9 @@
 					</div>
 				</c:forEach>
 
-					<div>
+				<div>
 					<a href="${pageContext.servletContext.contextPath }/board/write"><button>글쓰기</button></a>
-					</div>
+				</div>
 			</c:when>
 
 			<c:when test="${category == '캠핑톡톡'}">
@@ -107,9 +105,9 @@
 						<span style="color: #777 text-align: left;">♡</span> <span>${one.favorite }</span>
 					</div>
 				</c:forEach>
-					<div>
+				<div>
 					<a href="${pageContext.servletContext.contextPath }/board/write"><button>글쓰기</button></a>
-					</div>
+				</div>
 			</c:when>
 
 			<c:when test="${category == '궁금해요'}">
@@ -132,11 +130,11 @@
 					<div>
 						<span style="color: #777 text-align: left;">♡</span> <span>${one.favorite }</span>
 					</div>
-					
+
 				</c:forEach>
-					<div>
+				<div>
 					<a href="${pageContext.servletContext.contextPath }/board/write"><button>글쓰기</button></a>
-					</div>
+				</div>
 			</c:when>
 
 			<c:when test="${category == '아티클'}">

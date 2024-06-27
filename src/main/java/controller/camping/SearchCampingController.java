@@ -43,6 +43,7 @@ public class SearchCampingController extends HttpServlet {
 				request.setAttribute("campsites", campsites);
 				request.setAttribute("listSize", listSize);
 			}
+			
 			request.getRequestDispatcher("/WEB-INF/view/camping/search-result.jsp").forward(request, response);
 
 		} catch (Exception e) {
