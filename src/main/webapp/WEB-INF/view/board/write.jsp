@@ -9,12 +9,13 @@
 
 </head>
 <body>
+	<%@ include file="../outer-nav.jsp"%>
 	<div class="fixed-box">
-		<div style="width: 840px; margin: 0 auto;">
+		<div style="width: 400px; margin: 0 auto;">
 			<p style="text-align: center">글쓰기</p>
 			<form
 				action="${pageContext.servletContext.contextPath }/board/write-handle">
-				<table style="border-collapse: collapse; width: 100%">
+				<table style="border-collapse: collapse; width: 400px">
 					<tr>
 						<td
 							style="border: 1px solid #ccc; padding: 12px; text-align: center; background-color: #eee"><span
@@ -41,12 +42,12 @@
 							style="color: red">*</span>제목</td>
 						<td style="border: 1px solid #ccc; padding: 12px;"><input
 							name="title" type="text"
-							style="padding: 6px 10px; width: 500px; border: 1px solid #ccc" /></td>
+							style="padding: 6px 10px; width: 300px; border: 1px solid #ccc" /></td>
 					</tr>
 					<tr>
 						<td style="border: 1px solid #ccc; padding: 12px;" colspan="2">
 							<textarea name="body"
-								style="height: 200px; resize: none; width: 100%; box-sizing: border-box; padding: 6px 10px; border: 1px solid #ccc"></textarea>
+								style="height: 200px; resize: none; width: 375px; box-sizing: border-box; padding: 6px 10px; border: 1px solid #ccc"></textarea>
 
 						</td>
 					</tr>
