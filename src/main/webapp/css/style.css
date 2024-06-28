@@ -69,13 +69,9 @@ body {
 }
 
 .board {
-	max-width: 530px;
-	margin: 0px 0px 0px calc(-50px + 50vw);
 	padding: 10px 20px;
-	background-color: white;
-	height: 90vh;
+	background: none;
 }
-
 
 .board-cates  a{
 	text-decoration: none;
