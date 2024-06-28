@@ -36,7 +36,7 @@ public class BoardWriteHandleController extends HttpServlet {
 					category, title, 0);
 			boolean r = boardDao.save(one);
 			if (r) {
-				response.sendRedirect(request.getContextPath() + "/board/list");
+				response.sendRedirect(request.getContextPath() + "/board");
 			} else {
 				out.println("<script>");
 				out.println("window.alert(\"의견을 남기는데 오류가 발생하였습니다.\")");

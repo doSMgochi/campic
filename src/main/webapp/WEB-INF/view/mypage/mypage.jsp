@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +33,7 @@
 			<img src="./a.jpg"> <a
 				style="text-decoration: none; color: black"
 				href="${pageContext.servletContext.contextPath }/mypage/info/edit">
-				내 정보 관리 ></a>
+				${authUser.nickname } 내 정보 관리 ></a>
 		</div>
 		<div
 			style="text-align: center; margin-top: 20px; display: flex; align-items: center; justify-content: space-between; background: #221F18; border-radius: 10px; padding: 15px; color: white; margin-bottom: 10px">
@@ -44,7 +45,13 @@
 				>
 			</div>
 		</div>
-		<div>──로그인 했을 때 뜨는 부분───</div>
+		<c:choose>
+		<c:when test="${authUser != null}">
+			<div>
+				<a href="${pageContext.servletContext.contextPath }/logout"> ${authUser.nickname }
+							님 로그아웃 </a>
+			</div>
+			
 		<div
 			style="display: flex; align-items: center; justify-content: space-around;">
 			<div>나의 캠핑</div>
@@ -68,20 +75,9 @@
 		<div>캠핑</div>
 		<div>내 사용 리뷰</div>
 		<div>나의 활동</div>
-		<div>──로그인 안했을 때 뜨는 부분</div>
-		<div
-			style="display: flex; align-items: center; justify-content: space-between;">
-			<div style="width: 50%">
-				<a><button>회원가입</button></a>
-			</div>
-
-			<div>내 장비</div>
-			<div>박스들~</div>
-			<br />
-			<div>캠핑</div>
-			<div>내 사용 리뷰</div>
-			<div>나의 활동</div>
-			<div>──로그인 안했을 때 뜨는 부분</div>
+		</c:when>
+		<c:otherwise>
+		
 			<div
 				style="display: flex; align-items: center; justify-content: space-between;">
 				<div style="width: 50%">
@@ -90,24 +86,30 @@
 				<div style="width: 50%">
 					<a href="${pageContext.servletContext.contextPath }/login"><button>로그인</button></a>
 				</div>
-
+				
 			</div>
-		</div>
-		<div>──통합──</div>
-		<div>(로그인X)비회원 예약조회</div>
+			<div
+			style="display: flex; align-items: center; justify-content: space-between;">
+			<div>비회원 예약조회</div>
+			</div>
+		</c:otherwise>
+		</c:choose>
+		<div
+			style="display: flex; align-items: center; justify-content: space-between;">
 		<div>캠핑 기획전</div>
 		<div>진행중인 이벤트</div>
-		<div>(로그인X)캠핑로그 작성하기</div>
+		<div>캠핑로그 작성하기</div>
 		<br />
-		<div>(로그인X)쇼핑</div>
-		<div>(로그인X)스토어 기획전</div>
+		<div>쇼핑</div>
+		<div>스토어 기획전</div>
 		<br />
 		<div>고객센터</div>
 		<div>공지사항</div>
+		</div>
 
+		</div>
 		<div class="fixed-footer">
 			<%@ include file="../inner-nav.jsp"%>
 		</div>
-	</div>
 </body>
 </html>

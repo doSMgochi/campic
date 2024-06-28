@@ -4,6 +4,7 @@ package util;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 
 public class Util {
@@ -25,21 +26,15 @@ public class Util {
 	
 	private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
+	
     public static String getDaysAgo(String dateString) {
         try {
         	Date date = sdf.parse(dateString);
             long diffInMillies = Math.abs(new Date().getTime() - date.getTime());
-            long diffInMinutes = TimeUnit.MINUTES.convert(diffInMillies, TimeUnit.MILLISECONDS);
-            long diffInHours = TimeUnit.HOURS.convert(diffInMillies, TimeUnit.MILLISECONDS);
-            long diffInDays = TimeUnit.DAYS.convert(diffInMillies, TimeUnit.MILLISECONDS);
+            long diff = TimeUnit.DAYS.convert(diffInMillies, TimeUnit.MILLISECONDS);
 
-            if (diffInMinutes < 60) {
-                return diffInMinutes + "분 전";
-            } else if (diffInHours < 24) {
-                return diffInHours + "시간 전";
-            } else {
-                return diffInDays + "일 전";
-            }
+            return diff + "일 전";
+             
         } catch (ParseException e) {
             e.printStackTrace();
             return "날짜 형식 오류";
