@@ -6,160 +6,111 @@
 <meta charset="UTF-8">
 <title>로그인 | Campic</title>
 <style>
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #2c3e50; /* 남색 계열 배경 */
-    color: #ecf0f1; /* 글씨는 밝은 색으로 */
-}
-
-.new-fixed-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    
-}
-
-.new-content-box {
-    background-color: #34495e; /* 조금 더 밝은 남색 계열 */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 400px;
-    max-width: 90%;
-}
-
-.new-board {
-    margin-top: 20px;
-}
-
-.new-board-cates {
-    text-align: center;
-}
-
 .login-header {
-    margin-bottom: 20px;
-    margin-left: 0px;
+	width: 100%;
+	text-align: left;
+	margin-bottom: 20px;
 }
 
 .login-header h2 {
-    margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 
 .highlight {
-    color: hotpink;
+	color: hotpink;
 }
 
 .login-form-container {
-    width: 40%;
-    margin: 0 auto;
-    border: 2px solid #ddd;
-    padding: 30px;
-    border-radius: 8px;
-    background-color: #fff;
-    color: #2c3e50;
-    margin-left: 0px;
+	width: 100%;
+	max-width: 400px;
+	padding: 30px;
+	border-radius: 8px;
+	background-color: #ecf0f1;
+	color: #2c3e50;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	box-sizing: border-box;
+	overflow-x: hidden; /* 가로 스크롤 숨기기 */
 }
 
 .form-group {
-    margin-bottom: 15px;
+	margin-bottom: 15px;
 }
 
 .form-group input {
-    width: calc(100% - 20px);
-    padding: 10px;
-    border: 1px solid #ecf0f1;
-    border-radius: 4px;
-    background-color: #ecf0f1;
-    color: #2c3e50;
+	width: calc(100% - 20px); /* 내부 패딩에 대한 너비 조정 */
+	padding: 10px;
+	border: 1px solid #bdc3c7;
+	border-radius: 4px;
+	background-color: #ecf0f1;
+	color: #2c3e50;
+	box-sizing: border-box;
 }
 
 .btn-submit {
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    background-color: #e74c3c;
-    color: #ecf0f1;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+	width: 100%;
+	padding: 10px;
+	border: none;
+	border-radius: 4px;
+	background-color: #262441;
+	color: #ecf0f1;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
 }
 
 .btn-submit:hover {
-    background-color: #c0392b;
+	background-color: #625779;
 }
 
 .signup-link {
-    text-align: center;
-    margin-top: 10px;
+	text-align: center;
+	margin-top: 10px;
 }
 
 .signup-link a {
-    color: #ecf0f1;
-    text-decoration: none;
-    transition: color 0.3s ease;
+	color: #2c3e50;
+	text-decoration: none;
+	transition: color 0.3s ease;
 }
 
 .signup-link a:hover {
-    color: #e74c3c;
-}
-
-.new-fixed-footer {
-    margin-top: 20px;
-    text-align: center;
-    color: #bdc3c7;
-}
-
-.new-fixed-footer a {
-    color: #ecf0f1;
-    text-decoration: none;
-    margin: 0 10px;
-    transition: color 0.3s ease;
-}
-
-.new-fixed-footer a:hover {
-    color: #e74c3c;
+	color: #e74c3c;
 }
 </style>
 </head>
 <body>
-	<div class="fixed-box new-fixed-box">
-		<div class="content-box new-content-box">
-			<div class="board new-board">
-				<div class="board-cates new-board-cates">
-				<div class="login-header">
-					<div style="width: 840px;">
-						<div style="text-align: left; ">
-							<h2>로그인</h2>
-                        <div>
-                            회원서비스 &gt; <span class="highlight">로그인</span>
-                        </div>
-                    </div>
-                    <div class="login-form-container">
-                        <form action="${pageContext.servletContext.contextPath }/login-handle" method="post">
-                            <div class="form-group">
-                                <input type="text" name="id" placeholder="아이디를 입력해주세요" class="form-control" />
-                            </div>
-                            <div class="form-group">
-                                <input type="password" name="password" placeholder="비밀번호를 입력해주세요" class="form-control" />
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="btn-submit">로그인</button>
-                            </div>
-                        </form>
-                        <p class="signup-link">
-                            <a href="${pageContext.servletContext.contextPath }/signup">신규회원가입 바로가기</a>
-                        </p>
-                    </div>
-							<div class="fixed-footer new-fixed-footer">
-								<%@ include file="../inner-nav.jsp"%>
-							</div>
-						</div>
-					</div>
-				</div>
+	<%@ include file="../outer-nav.jsp"%>
+	<div class="fixed-box">
+		<div class="login-header"
+			style="text-align: center; margin-top: 200px">
+			<h2>로그인</h2>
+			<div>
+				회원서비스 &gt; <span style="color: #e0b10a">로그인</span>
 			</div>
 		</div>
+		<div class="login-form-container" style="text-align: center ; margin-left: 40px">
+			<form
+				action="${pageContext.servletContext.contextPath }/login-handle"
+				method="post">
+				<div class="form-group">
+					<input type="text" name="id" placeholder="아이디를 입력해주세요"
+						class="form-control" />
+				</div>
+				<div class="form-group">
+					<input type="password" name="password" placeholder="비밀번호를 입력해주세요"
+						class="form-control" />
+				</div>
+				<div class="form-group">
+					<button type="submit" class="btn-submit">로그인</button>
+				</div>
+			</form>
+			<p class="signup-link">
+				<a href="${pageContext.servletContext.contextPath }/signup">신규회원가입
+					바로가기</a>
+			</p>
+		</div>
+		<div class="fixed-footer">
+			<%@ include file="../inner-nav.jsp"%>
 		</div>
 	</div>
 </body>
