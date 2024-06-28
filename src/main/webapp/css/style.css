@@ -44,7 +44,11 @@ body {
 }
 
 .scroll::-webkit-scrollbar {
-  display: none;
+	display: none;
+}
+
+.no-scroll::-webkit-scrollbar {
+	display: none;
 }
 
 .status-bar {
@@ -73,7 +77,7 @@ body {
 	background: none;
 }
 
-.board-cates  a{
+.board-cates  a {
 	text-decoration: none;
 	color: rgb(105, 111, 115);
 	padding-bottom: 4px;
@@ -115,4 +119,16 @@ body {
 	background: none;
 	color: black;
 	padding: 5px 8px;
+}
+
+.flex-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.flex-item {
+	width: 48%; /* 2%는 여백을 위해 남겨둠 */
+	margin-bottom: 10px; /* 아래쪽 여백 */
+	box-sizing: border-box;
 }

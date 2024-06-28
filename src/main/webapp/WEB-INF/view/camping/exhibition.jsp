@@ -21,91 +21,99 @@
 			<div>미리 떠나는 휴가(파라미터로 받은 카테고리명 조회)</div>
 			<div></div>
 		</div>
-		<div>배너</div>
-		<div>
-			<!-- 한 40%? 씩 -->
-			foreach 로 이미지, 종류, 이름, 낮은 price~ 지역 찍어주기
-		</div>
-		<div>스크롤 내려가면 위로 올리는 버튼? js 필요할 듯</div>
-		<div
-			style="text-align: center; margin-top: 30px; overflow-y: scroll; max-height: 70vh;">
+		<div class="no-scroll"
+			style="text-align: center; margin-top: 30px; overflow-y: scroll; max-height: 78vh;">
 			<!-- 여기 두 줄 넣으면 될 듯 -->
 			<!-- 엑박 이미지 대체 이미지 넣기 -->
+
+			<img src="../ad.jpg"
+				style="width: 480px; height: 200px; border-radius: 15px; margin-bottom: 30px" />
+			<br />
 			<c:choose>
 				<c:when test="${vacances != null }">
-					<c:forEach items="${vacances }" var="one">
-						<img src="${one.imageUrl }" style="width: 40px; height: 40px">
-						<br />
-						<c:if test="${one.gnrlSite > 0 }">
-						일반야영장
-						</c:if>
-						<c:if test="${one.autoSite > 0 }">
-						오토캠핑
-						</c:if>
-						<c:if test="${one.glampSite > 0 }">
-						글램핑
-						</c:if>
-						<c:if test="${one.caravSite > 0 }">
-						카라반
-						</c:if>
-						<br />
-						${one.name }
-						<br />
-						${price }
-						<br />
-						address 띄어쓰기로 split
-						<br />
-					</c:forEach>
+					<div class="flex-container">
+						<c:forEach items="${vacances }" var="one">
+							<div class="flex-item">
+								<a
+									href="${pageContext.servletContext.contextPath }/camp/${one.id }"
+									style="text-decoration: none; color: black"> <img
+									src="${one.imageUrl } " onerror="this.src='../campimg.png'"
+									style="width: 100%; height: 245px; border-radius: 15px">
+									<div>
+										<br />
+										<c:if test="${one.gnrlSite > 0 }">
+                                        일반야영장
+                                    </c:if>
+										<c:if test="${one.autoSite > 0 }">
+                                        오토캠핑
+                                    </c:if>
+										<c:if test="${one.glampSite > 0 }">
+                                        글램핑
+                                    </c:if>
+										<c:if test="${one.caravSite > 0 }">
+                                        카라반
+                                    </c:if>
+										<br /> ${one.name } <br /> ${price } <br /> address 띄어쓰기로
+										split
+									</div>
+								</a>
+							</div>
+						</c:forEach>
+					</div>
 				</c:when>
 				<c:when test="${kidsZone != null }">
-					<c:forEach items="${kidsZone }" var="one">
-						<img src="${one.imageUrl }" style="width: 40px; height: 40px">
-						<br />
-						<c:if test="${one.gnrlSite > 0 }">
-						일반야영장
-						</c:if>
-						<c:if test="${one.autoSite > 0 }">
-						오토캠핑
-						</c:if>
-						<c:if test="${one.glampSite > 0 }">
-						글램핑
-						</c:if>
-						<c:if test="${one.caravSite > 0 }">
-						카라반
-						</c:if>
-						<br />
-						${one.name }
-						<br />
-						${price }
-						<br />
-						address 띄어쓰기로 split
-						<br />
-					</c:forEach>
+					<div class="flex-container">
+						<c:forEach items="${kidsZone }" var="one">
+							<div class="flex-item">
+								<img src="${one.imageUrl } " onerror="this.src='../campimg.png'"
+									style="width: 100%; height: 245px; border-radius: 15px">
+								<div>
+									<br />
+									<c:if test="${one.gnrlSite > 0 }">
+                                        일반야영장
+                                    </c:if>
+									<c:if test="${one.autoSite > 0 }">
+                                        오토캠핑
+                                    </c:if>
+									<c:if test="${one.glampSite > 0 }">
+                                        글램핑
+                                    </c:if>
+									<c:if test="${one.caravSite > 0 }">
+                                        카라반
+                                    </c:if>
+									<br /> ${one.name } <br /> ${price } <br /> address 띄어쓰기로
+									split
+								</div>
+							</div>
+						</c:forEach>
+					</div>
 				</c:when>
 				<c:when test="${pension != null }">
-					<c:forEach items="${pension }" var="one">
-						<img src="${one.imageUrl }" style="width: 40px; height: 40px">
-						<br />
-						<c:if test="${one.gnrlSite > 0 }">
-						일반야영장
-						</c:if>
-						<c:if test="${one.autoSite > 0 }">
-						오토캠핑
-						</c:if>
-						<c:if test="${one.glampSite > 0 }">
-						글램핑
-						</c:if>
-						<c:if test="${one.caravSite > 0 }">
-						카라반
-						</c:if>
-						<br />
-						${one.name }
-						<br />
-						${price }
-						<br />
-						address 띄어쓰기로 split
-						<br />
-					</c:forEach>
+					<div class="flex-container">
+						<c:forEach items="${pension }" var="one">
+							<div class="flex-item">
+								<img src="${one.imageUrl } " onerror="this.src='../campimg.png'"
+									style="width: 100%; height: 245px; border-radius: 15px">
+								<div>
+									<br />
+									<c:if test="${one.gnrlSite > 0 }">
+                                        일반야영장
+                                    </c:if>
+									<c:if test="${one.autoSite > 0 }">
+                                        오토캠핑
+                                    </c:if>
+									<c:if test="${one.glampSite > 0 }">
+                                        글램핑
+                                    </c:if>
+									<c:if test="${one.caravSite > 0 }">
+                                        카라반
+                                    </c:if>
+									<br /> ${one.name } <br /> ${price } <br /> address 띄어쓰기로
+									split
+								</div>
+							</div>
+						</c:forEach>
+					</div>
 				</c:when>
 			</c:choose>
 			<!-- 구분 -->
