@@ -51,6 +51,9 @@
 							</div>
 						</c:forEach>
 					</c:forEach>
+					<div>
+						<a href="${pageContext.servletContext.contextPath }/board/write"><button>글쓰기</button></a>
+					</div>
 				</c:when>
 
 				<c:when test="${category == '캠핑로그'}">

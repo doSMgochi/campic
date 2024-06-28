@@ -37,7 +37,7 @@ public class BoardDeleteController extends HttpServlet {
 		
 		//=============================================================
 		if(result) {
-			response.sendRedirect(request.getContextPath()+"/board/list");
+			response.sendRedirect(request.getContextPath()+"/board");
 		}else {
 			out.println("<script>");
 			out.println("window.alert(\"삭제가 되지 않았습니다.\n존재하지 않는 글이거나 삭제 권한이 없습니다.\")");
