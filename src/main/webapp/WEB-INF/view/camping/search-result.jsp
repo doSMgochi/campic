@@ -10,7 +10,7 @@
 </head>
 <body>
 	<%@ include file="../outer-nav.jsp"%>
-	<div class="fixed-box">
+	<div class="fixed-box no-scroll">
 		<!-- 임시 CSS 처리 -->
 		<c:forEach items="${campsites }" var="one">
 			<img src="${one.imageUrl }" style="width: 40px; height: 40px">

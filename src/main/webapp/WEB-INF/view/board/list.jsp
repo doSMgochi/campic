@@ -14,7 +14,7 @@
 <body>
 	<%@ include file="../outer-nav.jsp"%>
 	<div class="fixed-box">
-		<div class="board" style="overflow-y: scroll; max-height: 85vh;">
+		<div class="board no-scroll" style="overflow-y: scroll; max-height: 85vh;">
 			<div class="board-cates">
 				<a href="${pageContext.servletContext.contextPath }/board?home"
 					class="${category =='홈'? 'active' : '' }"> 홈 </a> <a

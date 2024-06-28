@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces="true"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,10 +30,17 @@
 		</div>
 		<div>if문 처리하고 예약 내역 출력</div>
 		<div>없으면 아래 내용 출력</div>
-		<div style="text-align: center">
-			예약 된 캠핑장이 없어요.<br />비어있는 캠핑장을 확인해보세요<br /> <a href=""><button>빠른
-					빈자리 찾기</button></a>
-		</div>
+		<c:choose>
+			<c:when test="${own = true }">
+				<div style="text-align: center">${reservationCampsite.name }</div>
+			</c:when>
+			<c:otherwise>
+				<div style="text-align: center">
+					예약 된 캠핑장이 없어요.<br />비어있는 캠핑장을 확인해보세요<br /> <a href=""><button>빠른
+							빈자리 찾기</button></a>
+				</div>
+			</c:otherwise>
+		</c:choose>
 		<div class="fixed-footer">
 			<%@ include file="../inner-nav.jsp"%>
 		</div>
