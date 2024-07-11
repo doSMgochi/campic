@@ -40,6 +40,9 @@ public class Campsite {
 	Date createdTime;
 	Date modifiedTime;
 
+	private String addressPart1;
+	private String addressPart2;
+
 	public Campsite() {
 		super();
 	}
@@ -87,6 +90,20 @@ public class Campsite {
 		this.animal = animal;
 		this.createdTime = createdTime;
 		this.modifiedTime = modifiedTime;
+	}
+
+	public void splitAddress() {
+		String[] parts = address.split(" ");
+		this.addressPart1 = parts.length > 0 ? parts[0] : "";
+		this.addressPart2 = parts.length > 1 ? parts[1] : "";
+	}
+
+	public String getAddressPart1() {
+		return addressPart1;
+	}
+
+	public String getAddressPart2() {
+		return addressPart2;
 	}
 
 	public int getId() {

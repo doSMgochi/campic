@@ -432,6 +432,7 @@ public class CampsiteDao {
 				one.setEnvironment(rs.getString("environment"));
 				one.setZipCode(rs.getString("zip_code"));
 				one.setAddress(rs.getString("address"));
+				one.splitAddress();
 				one.setDirection(rs.getString("direction"));
 				one.setTel(rs.getString("tel"));
 				one.setHomepage(rs.getString("homepage"));
@@ -495,6 +496,7 @@ public class CampsiteDao {
 				one.setEnvironment(rs.getString("environment"));
 				one.setZipCode(rs.getString("zip_code"));
 				one.setAddress(rs.getString("address"));
+				one.splitAddress();
 				one.setDirection(rs.getString("direction"));
 				one.setTel(rs.getString("tel"));
 				one.setHomepage(rs.getString("homepage"));
@@ -557,6 +559,7 @@ public class CampsiteDao {
 				one.setEnvironment(rs.getString("environment"));
 				one.setZipCode(rs.getString("zip_code"));
 				one.setAddress(rs.getString("address"));
+				one.splitAddress();
 				one.setDirection(rs.getString("direction"));
 				one.setTel(rs.getString("tel"));
 				one.setHomepage(rs.getString("homepage"));

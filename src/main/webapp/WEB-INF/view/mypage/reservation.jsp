@@ -16,10 +16,10 @@
 			style="display: flex; align-items: center; justify-content: space-between;">
 
 			<div>
-				<input type="button" value="&lt;(아이콘 변경)" onclick="history.back();" />
+				<button type="button" class="button-a" onclick="history.back();" ><i class="fa-solid fa-angle-left"></i></button>
 			</div>
-			<div>예약내역</div>
-			<div>상담(아이콘 변경)(*JS)</div>
+			<div>예약 내역</div>
+			<div><button type="button" class="button-a"><i class="fa-solid fa-headset"></i></button>(*JS)</div>
 		</div>
 		<div style="display: flex; align-items: center">
 			<div>전체 |</div>

@@ -77,12 +77,12 @@
 			<c:otherwise>
 
 				<div
-					style="display: flex; align-items: center; justify-content: space-between;">
+					style="display: flex; align-items: center; justify-content: space-around; text-align: center">
 					<div style="width: 50%">
-						<a href="${pageContext.servletContext.contextPath }/signup"><button>회원가입</button></a>
+						<a href="${pageContext.servletContext.contextPath }/signup"><button class="button-b" style="width: 50%">회원가입</button></a>
 					</div>
 					<div style="width: 50%">
-						<a href="${pageContext.servletContext.contextPath }/login"><button>로그인</button></a>
+						<a href="${pageContext.servletContext.contextPath }/login"><button class="button-b" style="width: 50%">로그인</button></a>
 					</div>
 
 				</div>

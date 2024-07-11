@@ -20,8 +20,11 @@ public class CampingReservationController extends HttpServlet {
 			throws ServletException, IOException {
 		try {
 			UserSessionDao userSessionDao = new UserSessionDao();
+			String userId = "";
+			if (request.getSession().getAttribute("authUser") != null) {
 			User authUser = (User) request.getSession().getAttribute("authUser");
-			String userId = authUser.getId();
+			userId = authUser.getId();
+			}
 			int campsite = userSessionDao.findReservationByUserId(userId);
 			boolean own = false;
 			if (campsite > 0) {

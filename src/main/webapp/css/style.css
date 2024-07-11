@@ -10,6 +10,11 @@
 	font-weight: lighter;
 }
 
+.no-deco {
+	text-decoration: none;
+	color: black;
+}
+
 body {
 	background-image: url('../background.jpg');
 	background-repeat: no-repeat;

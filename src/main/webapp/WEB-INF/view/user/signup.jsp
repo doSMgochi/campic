@@ -53,10 +53,10 @@
 </head>
 <body>
 	<%@ include file="../outer-nav.jsp"%>
-	<div class="fixed-box" style="padding-left: 20px; padding-top: 20px">
+	<div class="fixed-box" style="padding-top: 20px">
 		<form
 			action="${pageContext.servletContext.contextPath }/signup-handle"
-			method="post">
+			method="post" style="margin-left: 15px">
 
 			<div class="form-group" style="margin-top: 60px">
 				<label>아이디<span>(*)</span></label>

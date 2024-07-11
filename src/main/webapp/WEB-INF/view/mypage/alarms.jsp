@@ -13,7 +13,7 @@
 		<div
 			style="display: flex; align-items: center; justify-content: space-between;">
 			<div>
-				<input type="button" value="&lt;(아이콘 변경)" onclick="history.back();" />
+				<button type="button" class="button-a" onclick="history.back();"><i class="fa-solid fa-angle-left"></i></button>
 			</div>
 			<div>알림</div>
 			<div></div>
