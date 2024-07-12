@@ -7,8 +7,17 @@
 <head>
 <meta charset="UTF-8">
 <title>다함께 캠핑가자, 캠픽</title>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+<style type="text/css">
+ul, li {
+	margin: 0;
+	padding: 0;
+}
+</style>
 <body>
+	<!-- 전체 padding 값 하나 넣어야할 듯 ? 디자인 기준 페이지-->
 	<%@ include file="../outer-nav.jsp"%>
 	<div class="fixed-box">
 		<div class="no-scroll" style="overflow-y: scroll; max-height: 85vh;">
@@ -117,7 +126,7 @@
 
 							<form
 								action="${pageContext.servletContext.contextPath }/camp-reservation/${campsite.id }">
-							<input type="hidden" name="cabin" value="1">
+								<input type="hidden" name="cabin" value="1">
 								<button type="submit">사이트 예약하기</button>
 							</form>
 						</div>
@@ -127,86 +136,120 @@
 					<div>
 						<img src="${campsite.imageUrl }"
 							onerror="this.src='../campimg.png'"
-							style="width: 100%; height: 450px; border-radius: 15px" />
+							style="width: 100%; height: 450px; border-radius: 15px; box-shadow: 0px 4px 5px black; margin-top: 15px" />
 					</div>
-					<div>
-						<br />
-						<c:if test="${campsite.gnrlSite > 0 }">
+					<div style="padding: 15px">
+						<div style="font-size: 0.9rem; color: #333;">
+							<br />
+							<c:if test="${campsite.gnrlSite > 0 }">
                                         일반야영장
                                     </c:if>
-						<c:if test="${campsite.autoSite > 0 }">
+							<c:if test="${campsite.autoSite > 0 }">
                                         오토캠핑
                                     </c:if>
-						<c:if test="${campsite.glampSite > 0 }">
+							<c:if test="${campsite.glampSite > 0 }">
                                         글램핑
                                     </c:if>
-						<c:if test="${campsite.caravSite > 0 }">
+							<c:if test="${campsite.caravSite > 0 }">
                                         카라반
                                     </c:if>
-					</div>
-					<div>${campsite.name }</div>
-					<div>조인한 캠핑로그 count*</div>
-					<div>${campsite.address }</div>
-					<div>${campsite.tel }</div>
-					<div>
-						<c:if test="${campsite.businessNumber != null }">
-		관광사업자로 등록된 인증 캠핑장
+						</div>
+						<div style="font-size: 1.5rem; font-weight: bold">${campsite.name }</div>
+						<hr style="width: 250px; margin: 25px auto">
+						<div>조인한 캠핑로그 count*</div>
+						<div style="font-size: 0.9rem">
+							<i class="fa-solid fa-location-dot"></i> ${campsite.address }
+						</div>
+						<div style="font-size: 0.9rem">
+							<i class="fa-solid fa-phone"></i> ${campsite.tel }
+						</div>
+						<div style="font-size: 0.9rem">
+							<c:if test="${campsite.businessNumber != null }">
+								<i class="fa-solid fa-circle-check"></i> 관광사업자로 등록된 인증 캠핑장
 		 </c:if>
-					</div>
-					<div>${campsite.resveCl }</div>
-					<div>기본정보</div>
-					<table>
-						<thead>
+						</div>
+						<c:if test="${campsite.resveCl != null }">
+							<div>
+								<button class="button-a" style="margin: 10px 0">${campsite.resveCl }</button>
+							</div>
+						</c:if>
+						<ul
+							style="display: flex; list-style: none; justify-content: space-between; margin: 15px 0; font-size: 0.9rem">
+							<li
+								style="font-weight: bold; text-decoration: underline 2px black; text-underline-offset: 10px;">기본정보</li>
+							<li>공지사항</li>
+							<li>캠핑장 소개</li>
+							<li>시설 및 레저</li>
+							<li>캠핑로그</li>
+						</ul>
+						<div style="font-size: 1.1rem; font-weight: bold; margin: 25px 0">
+							기본정보</div>
+						<table>
+							<thead>
+								<tr>
+									<td style="width: 100px"></td>
+									<td></td>
+								</tr>
+							</thead>
 							<tr>
-								<td style="width: 100px"></td>
-								<td></td>
+								<td style="vertical-align: top;">환경</td>
+								<td style="color: #555; font-size: 0.9rem">${campsite.environment }</td>
 							</tr>
-						</thead>
-						<tr>
-							<td>환경</td>
-							<td>${campsite.environment }</td>
-						</tr>
-						<tr>
-							<td>한줄소개</td>
-							<td>${campsite.lineIntro }</td>
-						</tr>
-						<tr>
-							<td>위치소개</td>
-							<td>${campsite.direction }</td>
-						</tr>
-					</table>
-					<div>캠핑장 소개</div>
-					<div style="font-weight: bold">${campsite.lineIntro }</div>
-					<div>${campsite.intro }</div>
-					<div
-						style="display: flex; align-items: center; justify-content: space-between;">
-						<div>시설 및 레저</div>
-						<div>전체보기</div>
+							<tr>
+								<td style="vertical-align: top;">한줄소개</td>
+								<td style="color: #555; font-size: 0.9rem">${campsite.lineIntro }</td>
+							</tr>
+							<tr>
+								<td style="vertical-align: top;">위치소개</td>
+								<td style="color: #555; font-size: 0.9rem">${campsite.direction }</td>
+							</tr>
+						</table>
+						<div style="font-size: 1.1rem; font-weight: bold; margin: 25px 0">
+							공지사항</div>
+						<div style="font-size: 1.1rem; font-weight: bold; margin: 25px 0">
+							캠핑장 소개</div>
+						<div style="font-size: 0.9rem; font-weight: bold">${campsite.lineIntro }</div>
+						<div style="font-size: 0.9rem">${campsite.intro }</div>
+						<div
+							style="display: flex; align-items: center; justify-content: space-between;">
+							<div style="font-size: 1.1rem; font-weight: bold; margin: 25px 0">시설
+								및 레저</div>
+							<div>전체보기</div>
+						</div>
+						<div
+							style="display: flex; align-items: center; justify-content: space-between;">
+							<div style="font-size: 1.1rem; font-weight: bold; margin: 25px 0">캠핑존
+								둘러보기</div>
+							<div>일정 선택하기</div>
+						</div>
+						<div
+							style="display: flex; align-items: center; justify-content: space-between; border: 1px solid lightgray; padding: 10px; background: white; border-radius: 5px">
+							<div>예약 가능</div>
+							<div>다음시즌 오픈일</div>
+						</div>
+						<div>펜션 이미지 몇 개 추가해서 math.random으로 이미지 부여</div>
+						<div>div inline block으로 만들어서 정렬하고 사진 옆에 글 사용</div>
+						<div>
+							<form
+								action="${pageContext.servletContext.contextPath }/camp/${campsite.id}">
+								<input type="hidden" name="cabin" value="1">
+								<button type="submit">cabin 종류(있다고 치고 하나 넣기)</button>
+							</form>
+						</div>
+						<div>cabin 설명</div>
+						<div>가격 / 1박</div>
+						<div>체크인 시간, 체크아웃 시간</div>
+						<div>태그</div>
+						<div>조인한 캠핑로그 출력</div>
+						<div
+							style="display: flex; align-items: center; justify-content: space-between;">
+							<div style="font-size: 1.1rem; font-weight: bold; margin: 25px 0">캠핑로그</div>
+							<div>
+								포토 로그만 보기
+								<button></button>
+							</div>
+						</div>
 					</div>
-					<div
-						style="display: flex; align-items: center; justify-content: space-between;">
-						<div>캠핑존 둘러보기</div>
-						<div>일정 선택하기</div>
-					</div>
-					<div
-						style="display: flex; align-items: center; justify-content: space-between;">
-						<div>예약 가능</div>
-						<div>다음시즌 오픈일</div>
-					</div>
-					<div>펜션 이미지 몇 개 추가해서 math.random으로 이미지 부여</div>
-					<div>div inline block으로 만들어서 정렬하고 사진 옆에 글 사용</div>
-					<div>
-						<form
-							action="${pageContext.servletContext.contextPath }/camp/${campsite.id}">
-							<input type="hidden" name="cabin" value="1">
-							<button type="submit">cabin 종류(있다고 치고 하나 넣기)</button>
-						</form>
-					</div>
-					<div>cabin 설명</div>
-					<div>가격 / 1박</div>
-					<div>체크인 시간, 체크아웃 시간</div>
-					<div>태그</div>
-					<div>조인한 캠핑로그 출력</div>
 				</c:otherwise>
 
 			</c:choose>
