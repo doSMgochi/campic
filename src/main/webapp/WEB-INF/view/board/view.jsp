@@ -7,38 +7,33 @@
 <head>
 <meta charset="UTF-8">
 <title>게시판 자세히 보기 | Campic</title>
+<link rel="stylesheet" href="${pageContext.servletContext.contextPath }/css/style.css" />
 </head>
 <body>
 	<%@ include file="../outer-nav.jsp"%>
 	<div class="fixed-box">
-
-		<div class="board" style="overflow-y: scroll; max-height: 80vh;">
+		<div class="board no-scroll" style="overflow-y: scroll; max-height: 80vh;">
 			<div class="board-cates">
 				<div>
-					<h2
-						style="text-align: center; margin-bottom: 8px; border-bottom: 1px solid #ccc; padding: 8px;">${found.category }</h2>
-					<span style="color: #777; text-align: left;"></span> <span>${found.category}</span>
-					<span style="color: #777; text-align: left;"></span> <span>${found.title}</span>
-					<h3
-						style="text-align: left; margin-bottom: 8px; border-bottom: 1px solid #ccc; padding: 8px;">${found.writerId }</h3>
-					<div style="padding: 2px; text-align: right;">
-						<span style="color: #777"></span> <span>${Util.getDaysAgo(found.writedAt)}</span>
+					<h2 class="center-text margin-bottom-8 border-bottom padding-8">${found.category }</h2>
+					<span class="gray-text">${found.category}</span>
+					<span class="gray-text">${found.title}</span>
+					<h3 class="left-text margin-bottom-8 border-bottom padding-8">${found.writerId }</h3>
+					<div class="padding-2 right-text">
+						<span class="gray-text">${Util.getDaysAgo(found.writedAt)}</span>
 					</div>
 					<p>${found.body}</p>
 					<div>
-						<span style="color: #777 text-align: left;">♡</span> <span>${found.favorite }</span>
+						<span class="gray-text">♡</span> <span>${found.favorite }</span>
 					</div>
-
 				</div>
-				<a href="${pageContext.servletContext.contextPath }/board"><button>목록</button></a>
+				<a href="${pageContext.servletContext.contextPath }/board"><button class="button-a">목록</button></a>
 				<c:if test="${r == true}">
-					<a
-						href="${pageContext.request.contextPath}/board/delete?no=${found.no}">
-						<button>삭제</button>
+					<a href="${pageContext.request.contextPath}/board/delete?no=${found.no}">
+						<button class="button-a">삭제</button>
 					</a>
-					<a
-						href="${pageContext.request.contextPath}/board/update?no=${found.no}">
-						<button>수정</button>
+					<a href="${pageContext.request.contextPath}/board/update?no=${found.no}">
+						<button class="button-a">수정</button>
 					</a>
 				</c:if>
 				<!-- 답글 리스트 표시 -->
@@ -56,35 +51,27 @@
 				<!-- 답글 추가 폼 -->
 				<div>
 					<h3>답글 달기</h3>
-					<form action="${pageContext.request.contextPath}/board/reply"
-						method="post">
+					<form action="${pageContext.request.contextPath}/board/reply" method="post">
 						<input type="hidden" name="boardId" value="${found.no}">
-						<textarea name="body" rows="4" cols="50"></textarea>
+						<textarea name="body" rows="4" cols="50" class="textarea"></textarea>
 						<br>
-						<button type="submit">답글 추가</button>
+						<button type="submit" class="button-a">답글 추가</button>
 					</form>
-
-
 				</div>
-
 			</div>
-			<a href="${pageContext.servletContext.contextPath }/board/list"><button>목록</button></a>
+			<a href="${pageContext.servletContext.contextPath }/board/list"><button class="button-a">목록</button></a>
 			<c:if test="${r == true}">
-				<a
-					href="${pageContext.request.contextPath}/board/delete?no=${found.no}">
-					<button>삭제</button>
+				<a href="${pageContext.request.contextPath}/board/delete?no=${found.no}">
+					<button class="button-a">삭제</button>
 				</a>
-				<a
-					href="${pageContext.request.contextPath}/board/update?no=${found.no}">
-					<button>수정</button>
+				<a href="${pageContext.request.contextPath}/board/update?no=${found.no}">
+					<button class="button-a">수정</button>
 				</a>
 			</c:if>
 		</div>
 		<div class="fixed-footer">
 			<%@ include file="../inner-nav.jsp"%>
 		</div>
-
 	</div>
-
 </body>
 </html>

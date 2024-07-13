@@ -6,51 +6,38 @@
 <head>
 <meta charset="UTF-8">
 <title>글쓰기</title>
-
+<link rel="stylesheet" href="${pageContext.servletContext.contextPath }/css/style.css" />
 </head>
 <body>
 <%@ include file="../outer-nav.jsp"%>
 	<div class="fixed-box">
-		<div style="width: 400px; margin: 0 auto;">
-			<p style="text-align: center">글쓰기</p>
-			<form
-				action="${pageContext.servletContext.contextPath }/board/update-handle">
+		<div class="form-container">
+			<p class="center-text">글쓰기</p>
+			<form action="${pageContext.servletContext.contextPath }/board/update-handle">
 				<input type="hidden" name="no" value="${board.no }" />
-				<table style="border-collapse: collapse; width: 400px">
+				<table class="styled-table">
 					<tr>
-						<td
-							style="border: 1px solid #ccc; padding: 12px; text-align: center; background-color: #eee"><span
-							style="color: red">*</span>주제선택</td>
-						<td style="border: 1px solid #ccc; padding: 12px;">
-							${board.category }</td>
+						<td class="table-header"><span class="red-text">*</span>주제선택</td>
+						<td>${board.category }</td>
 					</tr>
 					<!-- 궁금해요 category 분야 선택 있어야 함 -->
 					<tr>
-						<td
-							style="border: 1px solid #ccc; padding: 12px; text-align: center; background-color: #eee"><span
-							style="color: red">*</span>작성자</td>
-						<td style="border: 1px solid #ccc; padding: 12px;">${board.writerId}</td>
-					</tr>
-
-					<tr>
-						<td
-							style="border: 1px solid #ccc; padding: 12px; text-align: center; background-color: #eee"><span
-							style="color: red">*</span>제목</td>
-						<td style="border: 1px solid #ccc; padding: 12px;"><input
-							name="title" type="text" value="${board.title }"
-							style="padding: 6px 10px; width: 300px; border: 1px solid #ccc" /></td>
+						<td class="table-header"><span class="red-text">*</span>작성자</td>
+						<td>${board.writerId}</td>
 					</tr>
 					<tr>
-						<td style="border: 1px solid #ccc; padding: 12px;" colspan="2">
-							<textarea name="body"
-								style="height: 200px; resize: none; width: 375px; box-sizing: border-box; padding: 6px 10px; border: 1px solid #ccc">${board.body }</textarea>
-
+						<td class="table-header"><span class="red-text">*</span>제목</td>
+						<td><input name="title" type="text" value="${board.title }" class="input-text" /></td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<textarea name="body" class="textarea">${board.body }</textarea>
 						</td>
 					</tr>
 				</table>
-				<div style="text-align: center; margin-top: 20px;">
-					<button type="submit" style="padding: 10px 20px;">저장</button>
-					<button type="reset" style="padding: 10px 20px;">취소</button>
+				<div class="center-text margin-top-20">
+					<button type="submit" class="button-a padding-10-20">저장</button>
+					<button type="reset" class="button-a padding-10-20">취소</button>
 				</div>
 			</form>
 		</div>

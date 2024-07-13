@@ -7,21 +7,19 @@
 <head>
 <meta charset="UTF-8">
 <title>다함께 캠핑가자, 캠픽</title>
+<link rel="stylesheet" href="${pageContext.servletContext.contextPath }/css/style.css" />
 </head>
 <body>
 	<%@ include file="../outer-nav.jsp"%>
 	<div class="fixed-box">
-		<!-- 임시 CSS 처리 -->
-		<div
-			style="display: flex; align-items: center; justify-content: space-between;">
-
+		<div class="flex-between align-center">
 			<div>
-				<button type="button" class="button-a" onclick="history.back();" ><i class="fa-solid fa-angle-left"></i></button>
+				<button type="button" class="button-a" onclick="history.back();"><i class="fa-solid fa-angle-left"></i></button>
 			</div>
 			<div>예약 내역</div>
 			<div><button type="button" class="button-a"><i class="fa-solid fa-headset"></i></button>(*JS)</div>
 		</div>
-		<div style="display: flex; align-items: center">
+		<div class="flex-between align-center">
 			<div>전체 |</div>
 			<div>결제대기 |</div>
 			<div>예약완료 |</div>
@@ -31,13 +29,13 @@
 		<div>if문 처리하고 예약 내역 출력</div>
 		<div>없으면 아래 내용 출력</div>
 		<c:choose>
-			<c:when test="${own = true }">
-				<div style="text-align: center">${reservationCampsite.name }</div>
+			<c:when test="${own == true }">
+				<div class="center-text">${reservationCampsite.name }</div>
 			</c:when>
 			<c:otherwise>
-				<div style="text-align: center">
-					예약 된 캠핑장이 없어요.<br />비어있는 캠핑장을 확인해보세요<br /> <a href=""><button>빠른
-							빈자리 찾기</button></a>
+				<div class="center-text">
+					예약 된 캠핑장이 없어요.<br />비어있는 캠핑장을 확인해보세요<br /> 
+					<a href=""><button class="button-c">빠른 빈자리 찾기</button></a>
 				</div>
 			</c:otherwise>
 		</c:choose>
@@ -45,6 +43,5 @@
 			<%@ include file="../inner-nav.jsp"%>
 		</div>
 	</div>
-
 </body>
 </html>

@@ -6,59 +6,13 @@
 <head>
 <meta charset="UTF-8">
 <title>회원가입 | Campic</title>
-<style>
-.form-group {
-	margin-bottom: 20px;
-}
-
-.form-group input {
-	width: 97%; /* input 요소의 너비 조정 */
-	padding: 10px;
-	border: 1px solid gray;
-	border-radius: 4px;
-	background-color: #ecf0f1;
-	color: #2c3e50;
-}
-
-.form-group label {
-	margin-bottom: 5px;
-	font-weight: bold;
-}
-
-.form-control {
-	width: calc(50% - 20px);
-	padding: 10px;
-	border: 1px solid gray;
-	border-radius: 4px;
-	background-color: #ecf0f1;
-	color: #2c3e50;
-	margin-top: 10px;
-}
-
-.btn-submit {
-	padding: 10px;
-	border: none;
-	border-radius: 4px;
-	background-color: #262441;
-	color: #ecf0f1;
-	font-size: 16px;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
-}
-
-.btn-submit:hover {
-	background-color: #625779;
-}
-</style>
+<link rel="stylesheet" href="${pageContext.servletContext.contextPath }/css/style.css" />
 </head>
 <body>
 	<%@ include file="../outer-nav.jsp"%>
-	<div class="fixed-box" style="padding-top: 20px">
-		<form
-			action="${pageContext.servletContext.contextPath }/signup-handle"
-			method="post" style="margin-left: 15px">
-
-			<div class="form-group" style="margin-top: 60px">
+	<div class="fixed-box padding-top-20">
+		<form action="${pageContext.servletContext.contextPath }/signup-handle" method="post" class="margin-left-15">
+			<div class="form-group margin-top-60">
 				<label>아이디<span>(*)</span></label>
 				<div>
 					<input type="text" placeholder="아이디.." name="id" />
@@ -100,23 +54,23 @@
 						<c:forEach var="i" begin="0" end="80">
 							<option>${2024-i }</option>
 						</c:forEach>
-					</select> <select name="birth" class="form-control">
+					</select>
+					<select name="birth" class="form-control">
 						<option disabled selected>월</option>
 						<c:forEach var="i" begin="1" end="12">
 							<option>${i}</option>
 						</c:forEach>
-					</select> <select name="birth" class="form-control">
+					</select>
+					<select name="birth" class="form-control">
 						<option disabled selected>일</option>
 						<c:forEach var="i" begin="1" end="31">
 							<option>${i}</option>
 						</c:forEach>
 					</select>
-
 				</div>
 			</div>
-
-			<div style="text-align: center;">
-				<button type="submit" class="btn-submit" style="margin-top: 15px">회원가입신청</button>
+			<div class="center-text">
+				<button type="submit" class="btn-submit margin-top-15">회원가입신청</button>
 			</div>
 		</form>
 		<div class="fixed-footer new-fixed-footer">
