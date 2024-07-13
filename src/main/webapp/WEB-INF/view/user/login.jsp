@@ -11,7 +11,7 @@
 <body>
 	<%@ include file="../outer-nav.jsp"%>
 	<div class="fixed-box">
-		<div class="login-header center-text margin-top-200">
+		<div class="login-header margin-top-200">
 			<h2>로그인</h2>
 			<div>
 				회원서비스 &gt; <span class="highlight">로그인</span>

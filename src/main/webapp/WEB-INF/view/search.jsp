@@ -7,7 +7,8 @@
 <title>다함께 캠핑가자, 캠픽</title>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<link rel="stylesheet" href="${pageContext.servletContext.contextPath }/css/style.css" />
+<link rel="stylesheet"
+	href="${pageContext.servletContext.contextPath }/css/style.css" />
 </head>
 <body>
 	<%@ include file="./outer-nav.jsp"%>
@@ -16,29 +17,35 @@
 			<div class="bold-text">어디로 떠나볼까요?</div>
 			<div>
 				<span>
-					<button class="button-a"><i class="fa-regular fa-map"></i></button>
-				</span> 
-				<span>
-					<button class="button-a"><i class="fa-regular fa-bookmark"></i></button>
+					<button class="button-a">
+						<i class="fa-regular fa-map"></i>
+					</button>
+				</span> <span>
+					<button class="button-a">
+						<i class="fa-regular fa-bookmark"></i>
+					</button>
 				</span>
 			</div>
 		</div>
 		<div>
-			<form action="${pageContext.servletContext.contextPath }/search/result">
-				<input class="button-a full-width" type="text" name="camp" placeholder="캠핑장명을 검색해 보세요" />
+			<form
+				action="${pageContext.servletContext.contextPath }/search/result">
+				<input class="button-a full-width" type="text" name="camp"
+					placeholder="캠핑장명을 검색해 보세요" />
 				<div class="flex-between">
-					<input class="button-a half-width" type="date" name="" placeholder="날짜" /> 
-					<select class="button-a half-width">
+					<input class="button-a half-width" type="date" name=""
+						placeholder="날짜" /> <select class="button-a half-width">
 						<option disabled selected>지역</option>
 					</select>
 				</div>
-				<button class="button-b full-width margin-top-10" type="submit">검색하기</button>
+				<button class="button-b similar-full-width margin-top-10" type="submit">검색하기</button>
 			</form>
 		</div>
 		<div class="flex-between margin-top-10">
 			<div class="bold-text">최근 본 캠핑장</div>
 			<div class="darkslateblue-text">
-				자동 저장 <button>버튼</button>
+				자동 저장
+				<button>버튼</button>
 			</div>
 		</div>
 		<div class="center-text">
