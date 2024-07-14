@@ -59,7 +59,7 @@
 					</form>
 				</div>
 			</div>
-			<a href="${pageContext.servletContext.contextPath }/board/list"><button class="button-a">목록</button></a>
+			<a href="${pageContext.servletContext.contextPath }/board"><button class="button-a">목록</button></a>
 			<c:if test="${r == true}">
 				<a href="${pageContext.request.contextPath}/board/delete?no=${found.no}">
 					<button class="button-a">삭제</button>

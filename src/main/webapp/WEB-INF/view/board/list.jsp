@@ -13,7 +13,7 @@
 <body>
 	<%@ include file="../outer-nav.jsp"%>
 	<div class="fixed-box">
-		<div class="board no-scroll" style="overflow-y: scroll; max-height: 85vh;">
+		<div class="board no-scroll" style="overflow-y: scroll; max-height: 83vh;">
 			<div class="board-cates">
 				<a href="${pageContext.servletContext.contextPath }/board?home" class="${category == '홈' ? 'active' : '' }"> 홈 </a>
 				<a href="${pageContext.servletContext.contextPath }/board?campingLog" class="${category == '캠핑로그' ? 'active' : '' }"> 캠핑로그 </a>
