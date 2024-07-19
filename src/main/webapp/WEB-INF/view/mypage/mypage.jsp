@@ -34,15 +34,19 @@
 			<div class="flex-between align-center">
 				<div class="bold-text">마이</div>
 				<div>
-					<button class="button-a">
-						<i class="fa-regular fa-bell"></i>
-					</button>
+					<a href="${pageContext.servletContext.contextPath }/mypage/alarms">
+						<button class="button-a">
+							<i class="fa-regular fa-bell"></i>
+						</button>
+					</a>
 					<button type="button" class="button-a" onclick="togglePopup();">
 						<i class="fa-solid fa-headset"></i>
 					</button>
-					<button class="button-a">
-						<i class="fa-solid fa-gear"></i>
-					</button>
+					<a href="${pageContext.servletContext.contextPath }/settings">
+						<button class="button-a">
+							<i class="fa-solid fa-gear"></i>
+						</button>
+					</a>
 				</div>
 			</div>
 			<c:if test="${authUser != null}">
@@ -61,30 +65,41 @@
 			</div>
 			<c:choose>
 				<c:when test="${authUser != null}">
-					<div>
-						<a href="${pageContext.servletContext.contextPath }/logout">
-							${authUser.nickname } 님 로그아웃 </a>
+					<div class="flex-around align-center margin-top-20">
+						<div class="button-b padding-15-70">나의 캠핑</div>
+						<div class="button-b padding-15-70">나의 쇼핑</div>
 					</div>
-					<div class="flex-around align-center">
-						<div>나의 캠핑</div>
-						<div>나의 쇼핑</div>
+					<div class="flex-around text-center margin-top-20">
+						<div>
+							<i class="fa-regular fa-calendar-check button-c padding-15"></i><br>예약내역
+						</div>
+						<div>
+							<i class="fa-solid fa-house-flag button-c padding-15"></i><br>빈자리
+							구독
+						</div>
+						<div>
+							<i class="fa-solid fa-feather-pointed button-c padding-15"></i><br>캠핑로그
+						</div>
+						<div>
+							<i class="fa-solid fa-book-bookmark button-c padding-15"></i><br>찜
+							목록
+						</div>
 					</div>
-					<div class="flex-around align-center">
-						<div>예약내역</div>
-						<div>빈자리 구독</div>
-						<div>캠핑로그</div>
-						<div>찜 목록</div>
-					</div>
-					<div class="flex-between align-center">
+					<div class="flex-between align-center margin-top-20">
 						<div>캠핑장 쿠폰</div>
 						<div>></div>
 					</div>
-					<div>내 장비</div>
-					<div>박스들~</div>
-					<br />
-					<div>캠핑</div>
-					<div>내 사용 리뷰</div>
-					<div>나의 활동</div>
+					<div class="large-text margin-top-20">캠핑</div>
+					<div class="small-text-2">
+						<div class="margin-top-15">내 사용 리뷰</div>
+						<div class="margin-top-15">나의 활동</div>
+						<div class="margin-top-15">캠핑 기획전</div>
+						<div class="margin-top-15">진행중인 이벤트</div>
+					</div>
+					<div class="large-text margin-top-20">고객센터</div>
+					<div class="small-text-2">
+						<div class="margin-top-15">공지사항</div>
+					</div>
 				</c:when>
 				<c:otherwise>
 					<div class="flex-around align-center text-center margin-bottom-20">
@@ -99,34 +114,34 @@
 							</a>
 						</div>
 					</div>
+					<div>
+						<div>
+							<div class="large-text margin-top-20">캠핑</div>
+							<div class="small-text-2">
+								<div class="margin-top-15">비회원 예약조회</div>
+								<div class="margin-top-15">캠핑 기획전</div>
+								<div class="margin-top-15">진행중인 이벤트</div>
+								<div class="margin-top-15">캠핑로그 작성하기</div>
+							</div>
+						</div>
+						<div class="margin-top-30">
+							<div class="small-text-2">
+								<div class="large-text margin-top-15">쇼핑</div>
+								<div class="margin-top-15">스토어 기획전</div>
+							</div>
+						</div>
+						<div class="margin-top-30">
+							<div class="small-text-2">
+								<div class="large-text margin-top-15">고객센터</div>
+								<div class="margin-top-15">공지사항</div>
+							</div>
+						</div>
+						<div class="ad-section margin-top-30">
+							<img src="./ad.jpg" class="ad-img" />
+						</div>
+					</div>
 				</c:otherwise>
 			</c:choose>
-			<div>
-				<div>
-					<div class="large-text margin-top-20">캠핑</div>
-					<div class="small-text-2">
-						<div class="margin-top-15">비회원 예약조회</div>
-						<div class="margin-top-15">캠핑 기획전</div>
-						<div class="margin-top-15">진행중인 이벤트</div>
-						<div class="margin-top-15">캠핑로그 작성하기</div>
-					</div>
-				</div>
-				<div class="margin-top-30">
-					<div class="small-text-2">
-						<div class="large-text margin-top-15">쇼핑</div>
-						<div class="margin-top-15">스토어 기획전</div>
-					</div>
-				</div>
-				<div class="margin-top-30">
-					<div class="small-text-2">
-						<div class="large-text margin-top-15">고객센터</div>
-						<div class="margin-top-15">공지사항</div>
-					</div>
-				</div>
-				<div class="ad-section margin-top-30">
-					<img src="./ad.jpg" class="ad-img" />
-				</div>
-			</div>
 		</div>
 		<div class="fixed-footer">
 			<%@ include file="../inner-nav.jsp"%>

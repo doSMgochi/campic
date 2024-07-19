@@ -9,6 +9,10 @@
 	font-family: "Orbit", sans-serif;
 	font-weight: lighter;
 }
+a {
+	text-decoration: none;
+	color: black;
+}
 
 /* General Styles */
 body {
@@ -26,6 +30,7 @@ body {
 	-ms-user-select: none;
 	user-select: none;
 }
+
 
 .flex {
 	display: flex;
@@ -138,6 +143,7 @@ body {
 	color: white;
 	padding: 5px 8px;
 	border-radius: 25px;
+	cursor: pointer;
 }
 
 .button-c {
@@ -146,6 +152,7 @@ body {
 	color: white;
 	padding: 5px 8px;
 	border-radius: 25px;
+	cursor: pointer;
 }
 
 .button-d {
@@ -153,6 +160,7 @@ body {
 	background: none;
 	color: black;
 	padding: 5px 8px;
+	cursor: pointer;
 }
 
 /* Quote Container */
@@ -578,6 +586,10 @@ body {
 	padding: 15px;
 }
 
+.padding-15-70 {
+	padding: 15px 70px;
+}
+
 /* Dark Text */
 .dark-text {
 	color: #333;
@@ -657,7 +669,7 @@ body {
 /* Form Container */
 .form-container {
 	width: 400px;
-	margin: 0 auto;
+	margin: auto auto;
 }
 
 /* Styled Table */
